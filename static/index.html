@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Helldivers 2 Helper</title>
+    <link rel="icon" href="/static/media/icon/favicon.ico" />
+    <!-- Tailwind CSS -->
+    <script src="/static/media/tailwindcss.js"></script>
+    <!-- Toastify CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "hd-yellow": "#FFE800",
+              "hd-black": "#1A1A1A",
+              "hd-grey": "#2D2D2D",
+              "hd-dark-grey": "#222222",
+            },
+            fontFamily: {
+              oswald: ["Oswald", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        background-image: radial-gradient(
+          circle at center,
+          #2d2d2d 0%,
+          #1a1a1a 100%
+        );
+      }
+      .scanline {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.2) 50%,
+          rgba(0, 0, 0, 0.2)
+        );
+        background-size: 100% 4px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        z-index: 50;
+      }
+      .hd-border {
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% calc(100% - 10px),
+          calc(100% - 10px) 100%,
+          0 100%
+        );
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ffe800;
+      }
+    </style>
+  </head>
+  <body class="text-white font-oswald min-h-screen flex flex-col">
+    <div class="scanline"></div>
+
+    <div
+      class="container mx-auto px-4 py-6 max-w-md lg:max-w-6xl flex-grow flex flex-col relative z-10"
+    >
+      <!-- Header -->
+      <header
+        class="flex justify-between items-end border-b-4 border-hd-yellow pb-2 mb-6"
+      >
+        <div>
+          <h1 class="text-3xl font-bold text-hd-yellow tracking-wider">
+            SUPER EARTH
+          </h1>
+          <p class="text-xs text-gray-400 tracking-[0.2em]">
+            STRATAGEM COMMAND INTERFACE
+          </p>
+        </div>
+        <div
+          id="connectionStatus"
+          class="text-green-500 font-bold text-sm animate-pulse"
+        >
+          CONNECTED
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="flex-grow flex flex-col overflow-hidden relative z-10">
+        <!-- Responsive Container: Row on LG, Col on Mobile -->
+        <div
+          class="flex flex-col lg:flex-row gap-8 lg:gap-16 h-full justify-center items-start lg:items-center"
+        >
+          <!-- Mission Stratagems (Left/Top) -->
+          <!-- Mission Stratagems (Left/Top) -->
+          <div
+            class="lg:w-96 flex-shrink-0 flex flex-col gap-6 justify-center w-full"
+          >
+            <div>
+              <div
+                class="text-hd-yellow font-bold text-xs text-center lg:mb-4 lg:text-xl lg:writing-mode-horizontal tracking-widest opacity-80 border-b-2 border-hd-yellow pb-1"
+              >
+                MISSION STRATAGEMS
+              </div>
+              <div id="mission-grid" class="grid grid-cols-4 gap-2 w-full">
+                <!-- Mission Slots Generated Here -->
+              </div>
+            </div>
+
+            <!-- Space Station Stratagems -->
+            <div>
+              <div
+                class="text-hd-yellow font-bold text-xs text-center lg:mb-4 lg:text-xl lg:writing-mode-horizontal tracking-widest opacity-80 border-b-2 border-hd-yellow pb-1"
+              >
+                SPACE STATION
+              </div>
+              <div id="station-grid" class="grid grid-cols-4 gap-2 w-full">
+                <!-- Station Slots Generated Here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Loadout (Center) -->
+          <div class="flex-grow flex flex-col justify-center w-full max-w-2xl">
+            <div class="flex items-center mb-4 justify-center lg:justify-start">
+              <div class="w-1 h-8 bg-hd-yellow mr-3"></div>
+              <h2 class="text-2xl font-bold tracking-wide">LOADOUT</h2>
+            </div>
+            <div
+              id="loadout-grid"
+              class="grid grid-cols-2 gap-4 w-full aspect-square"
+            >
+              <!-- Slots will be generated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings / Footer -->
+      <section class="mt-auto border-t border-gray-700 pt-6" id="configSection">
+        <div
+          class="flex flex-col gap-2 bg-hd-grey p-4 rounded hd-border border border-gray-600"
+        >
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-hd-yellow">HOLD CTRL MODE</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                id="mode-toggle"
+                class="sr-only peer"
+                checked
+              />
+              <div
+                class="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-hd-yellow"
+              ></div>
+            </label>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="flex-1">
+              <label class="text-xs text-gray-400 block mb-1"
+                >OPEN MENU KEY</label
+              >
+              <input
+                type="text"
+                id="config-open-key"
+                value="ctrl"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold uppercase focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div class="flex-1">
+              <label class="text-xs text-gray-400 block mb-1">DELAY (MS)</label>
+              <input
+                type="number"
+                id="config-delay"
+                value="50"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-xs text-gray-500 mt-4">FOR DEMOCRACY</p>
+      </section>
+    </div>
+
+    <!-- Library Overlay -->
+    <div
+      id="library-section"
+      class="fixed inset-0 bg-hd-black/95 z-50 hidden flex flex-col"
+    >
+      <div
+        class="p-4 border-b border-hd-yellow flex justify-between items-center bg-hd-grey"
+      >
+        <h2 class="text-xl font-bold text-hd-yellow">SELECT STRATAGEM</h2>
+        <button
+          id="closeLibrary"
+          class="text-white hover:text-hd-yellow font-bold px-4 py-2 border border-white hover:border-hd-yellow transition-colors"
+        >
+          CLOSE
+        </button>
+      </div>
+
+      <!-- Search/Filter -->
+      <div class="p-4 bg-hd-black">
+        <input
+          type="text"
+          id="search-box"
+          placeholder="SEARCH STRATAGEMS..."
+          class="w-full bg-hd-grey text-white p-3 border border-gray-600 focus:border-hd-yellow outline-none font-bold placeholder-gray-500"
+        />
+      </div>
+
+      <div class="flex-grow overflow-y-auto p-4">
+        <!-- Compact Grid -->
+        <div id="stratagem-list" class="grid grid-cols-4 gap-2">
+          <!-- List items -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toastify JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="/static/app.js?v=3"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pydirectinput
+jinja2
+python-multipart
+requests

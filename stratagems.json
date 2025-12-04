@@ -1,0 +1,1279 @@
+[
+    {
+        "id": "machine_gun",
+        "name": "MG-43 Machine Gun",
+        "icon": "/static/media/icon/Patriotic Administration Center/Machine Gun.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "up",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "anti_materiel_rifle",
+        "name": "APW-1 Anti-Materiel Rifle",
+        "icon": "/static/media/icon/Patriotic Administration Center/Anti-Materiel Rifle.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "up",
+            "down"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "stalwart",
+        "name": "M-105 Stalwart",
+        "icon": "/static/media/icon/Patriotic Administration Center/Stalwart.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "up",
+            "up",
+            "left"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "expendable_anti_tank",
+        "name": "EAT-17 Expendable Anti-Tank",
+        "icon": "/static/media/icon/Patriotic Administration Center/Expendable Anti-Tank.svg",
+        "keys": [
+            "down",
+            "down",
+            "left",
+            "up",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "recoilless_rifle",
+        "name": "GR-8 Recoilless Rifle",
+        "icon": "/static/media/icon/Patriotic Administration Center/Recoilless Rifle.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "right",
+            "left"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "flamethrower",
+        "name": "FLAM-40 Flamethrower",
+        "icon": "/static/media/icon/Patriotic Administration Center/Flamethrower.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "down",
+            "up"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "autocannon",
+        "name": "AC-8 Autocannon",
+        "icon": "/static/media/icon/Patriotic Administration Center/Autocannon.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "up",
+            "up",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "heavy_machine_gun",
+        "name": "MG-206 Heavy Machine Gun",
+        "icon": "/static/media/icon/Patriotic Administration Center/Heavy Machine Gun.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "down",
+            "down"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "airburst_rocket_launcher",
+        "name": "RL-77 Airburst Rocket Launcher",
+        "icon": "/static/media/icon/Patriotic Administration Center/Airburst Rocket Launcher.svg",
+        "keys": [
+            "down",
+            "up",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "commando",
+        "name": "MLS-4X Commando",
+        "icon": "/static/media/icon/Patriotic Administration Center/Commando.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "down",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "railgun",
+        "name": "RS-422 Railgun",
+        "icon": "/static/media/icon/Patriotic Administration Center/Railgun.svg",
+        "keys": [
+            "down",
+            "right",
+            "down",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "spear",
+        "name": "FAF-14 Spear",
+        "icon": "/static/media/icon/Patriotic Administration Center/Spear.svg",
+        "keys": [
+            "down",
+            "down",
+            "up",
+            "down",
+            "down"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "sta_x3_w.a.s.p._launcher",
+        "name": "StA-X3 W.A.S.P. Launcher",
+        "icon": "/static/media/icon/Patriotic Administration Center/StA-X3 W.A.S.P. Launcher.svg",
+        "keys": [
+            "down",
+            "down",
+            "up",
+            "down",
+            "right"
+        ],
+        "category": "Patriotic Administration Center"
+    },
+    {
+        "id": "orbital_gatling_barrage",
+        "name": "Orbital Gatling Barrage",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Gatling Barrage.svg",
+        "keys": [
+            "right",
+            "down",
+            "left",
+            "up",
+            "up"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_airburst_strike",
+        "name": "Orbital Airburst Strike",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Airburst Strike.svg",
+        "keys": [
+            "right",
+            "right",
+            "right"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_120mm_he_barrage",
+        "name": "Orbital 120mm HE Barrage",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital 120MM HE Barrage.svg",
+        "keys": [
+            "right",
+            "right",
+            "down",
+            "left",
+            "right",
+            "down"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_380mm_he_barrage",
+        "name": "Orbital 380mm HE Barrage",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital 380MM HE Barrage.svg",
+        "keys": [
+            "right",
+            "down",
+            "up",
+            "up",
+            "left",
+            "down",
+            "down"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_walking_barrage",
+        "name": "Orbital Walking Barrage",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Walking Barrage.svg",
+        "keys": [
+            "right",
+            "down",
+            "right",
+            "down",
+            "right",
+            "down"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_laser",
+        "name": "Orbital Laser",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Laser.svg",
+        "keys": [
+            "right",
+            "down",
+            "up",
+            "right",
+            "down"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_napalm_barrage",
+        "name": "Orbital Napalm Barrage",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Napalm Barrage.svg",
+        "keys": [
+            "right",
+            "right",
+            "down",
+            "left",
+            "right",
+            "up"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "orbital_railcannon_strike",
+        "name": "Orbital Railcannon Strike",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital Railcannon Strike.svg",
+        "keys": [
+            "right",
+            "up",
+            "down",
+            "down",
+            "right"
+        ],
+        "category": "Orbital Cannons"
+    },
+    {
+        "id": "eagle_strafing_run",
+        "name": "Eagle Strafing Run",
+        "icon": "/static/media/icon/Hangar/Eagle Strafing Run.svg",
+        "keys": [
+            "up",
+            "right",
+            "right"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_airstrike",
+        "name": "Eagle Airstrike",
+        "icon": "/static/media/icon/Hangar/Eagle Airstrike.svg",
+        "keys": [
+            "up",
+            "right",
+            "down",
+            "right"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_cluster_bomb",
+        "name": "Eagle Cluster Bomb",
+        "icon": "/static/media/icon/Hangar/Eagle Cluster Bomb.svg",
+        "keys": [
+            "up",
+            "right",
+            "down",
+            "down",
+            "right"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_napalm_airstrike",
+        "name": "Eagle Napalm Airstrike",
+        "icon": "/static/media/icon/Hangar/Eagle Napalm Airstrike.svg",
+        "keys": [
+            "up",
+            "right",
+            "down",
+            "up"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "jump_pack",
+        "name": "LIFT-850 Jump Pack",
+        "icon": "/static/media/icon/Hangar/Jump Pack.svg",
+        "keys": [
+            "down",
+            "up",
+            "up",
+            "down",
+            "up"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_smoke_strike",
+        "name": "Eagle Smoke Strike",
+        "icon": "/static/media/icon/Hangar/Eagle Smoke Strike.svg",
+        "keys": [
+            "up",
+            "right",
+            "up",
+            "down"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_110mm_rocket_pods",
+        "name": "Eagle 110mm Rocket Pods",
+        "icon": "/static/media/icon/Hangar/Eagle 110MM Rocket Pods.svg",
+        "keys": [
+            "up",
+            "right",
+            "up",
+            "left"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "eagle_500kg_bomb",
+        "name": "Eagle 500kg Bomb",
+        "icon": "/static/media/icon/Hangar/Eagle 500KG Bomb.svg",
+        "keys": [
+            "up",
+            "right",
+            "down",
+            "down",
+            "down"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "fast_recon_vehicle",
+        "name": "M-102 Fast Recon Vehicle",
+        "icon": "/static/media/icon/Hangar/Fast Recon Vehicle.svg",
+        "keys": [
+            "left",
+            "down",
+            "right",
+            "down",
+            "right",
+            "down",
+            "up"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "orbital_precision_strike",
+        "name": "Orbital Precision Strike",
+        "icon": "/static/media/icon/Bridge/Orbital Precision Strike.svg",
+        "keys": [
+            "right",
+            "right",
+            "up"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "orbital_gas_strike",
+        "name": "Orbital Gas Strike",
+        "icon": "/static/media/icon/Bridge/Orbital Gas Strike.svg",
+        "keys": [
+            "right",
+            "right",
+            "down",
+            "right"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "orbital_ems_strike",
+        "name": "Orbital EMS Strike",
+        "icon": "/static/media/icon/Bridge/Orbital EMS Strike.svg",
+        "keys": [
+            "right",
+            "right",
+            "left",
+            "down"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "orbital_smoke_strike",
+        "name": "Orbital Smoke Strike",
+        "icon": "/static/media/icon/Bridge/Orbital Smoke Strike.svg",
+        "keys": [
+            "right",
+            "right",
+            "down",
+            "up"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "hmg_emplacement",
+        "name": "E/MG-101 HMG Emplacement",
+        "icon": "/static/media/icon/Bridge/HMG Emplacement.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "right",
+            "right",
+            "left"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "shield_generator_relay",
+        "name": "FX-12 Shield Generator Relay",
+        "icon": "/static/media/icon/Bridge/Shield Generator Relay.svg",
+        "keys": [
+            "down",
+            "down",
+            "left",
+            "right",
+            "left",
+            "right"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "tesla_tower",
+        "name": "A/ARC-3 Tesla Tower",
+        "icon": "/static/media/icon/Bridge/Tesla Tower.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "grenadier_battlement",
+        "name": "E/GL-21 Grenadier Battlement",
+        "icon": "/static/media/icon/Bridge/Grenadier Battlement.svg",
+        "keys": [
+            "down",
+            "right",
+            "down",
+            "left",
+            "right"
+        ],
+        "category": "Bridge"
+    },
+    {
+        "id": "anti_personnel_minefield",
+        "name": "MD-6 Anti-Personnel Minefield",
+        "icon": "/static/media/icon/Engineering Bay/Anti-Personnel Minefield.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "right"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "supply_pack",
+        "name": "B-1 Supply Pack",
+        "icon": "/static/media/icon/Engineering Bay/Supply Pack.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "up",
+            "up",
+            "down"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "grenade_launcher",
+        "name": "GL-21 Grenade Launcher",
+        "icon": "/static/media/icon/Engineering Bay/Grenade Launcher.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "left",
+            "down"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "laser_cannon",
+        "name": "LAS-98 Laser Cannon",
+        "icon": "/static/media/icon/Engineering Bay/Laser Cannon.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "up",
+            "left"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "incendiary_mines",
+        "name": "MD-I4 Incendiary Mines",
+        "icon": "/static/media/icon/Engineering Bay/Incendiary Mines.svg",
+        "keys": [
+            "down",
+            "left",
+            "left",
+            "down"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "ax_las_5_guard_dog_rover",
+        "name": "AX/LAS-5 \"Guard Dog\" Rover",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "up",
+            "right",
+            "right"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "ballistic_shield_backpack",
+        "name": "SH-20 Ballistic Shield Backpack",
+        "icon": "/static/media/icon/Engineering Bay/Ballistic Shield Backpack.svg",
+        "keys": [
+            "down",
+            "left",
+            "down",
+            "down",
+            "up",
+            "left"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "arc_thrower",
+        "name": "ARC-3 Arc Thrower",
+        "icon": "/static/media/icon/Engineering Bay/Arc Thrower.svg",
+        "keys": [
+            "down",
+            "right",
+            "down",
+            "up",
+            "left",
+            "left"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "anti_tank_mines",
+        "name": "MD-17 Anti-Tank Mines",
+        "icon": "/static/media/icon/Engineering Bay/Anti-Tank Mines.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "up"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "quasar_cannon",
+        "name": "LAS-99 Quasar Cannon",
+        "icon": "/static/media/icon/Engineering Bay/Quasar Cannon.svg",
+        "keys": [
+            "down",
+            "down",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "shield_generator_pack",
+        "name": "SH-32 Shield Generator Pack",
+        "icon": "/static/media/icon/Engineering Bay/Shield Generator Pack.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "right",
+            "left",
+            "right"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "gas_mine",
+        "name": "MD-8 Gas Mines",
+        "icon": "/static/media/icon/Engineering Bay/Gas Mine.svg",
+        "keys": [
+            "down",
+            "left",
+            "left",
+            "right"
+        ],
+        "category": "Engineering Bay"
+    },
+    {
+        "id": "machine_gun_sentry",
+        "name": "A/MG-43 Machine Gun Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/Machine Gun Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "right",
+            "up"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "gatling_sentry",
+        "name": "A/G-16 Gatling Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/Gatling Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "left"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "mortar_sentry",
+        "name": "A/M-12 Mortar Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/Mortar Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "right",
+            "down"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "ax_ar_23_guard_dog",
+        "name": "AX/AR-23 \"Guard Dog\"",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "up",
+            "right",
+            "down"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "autocannon_sentry",
+        "name": "A/AC-8 Autocannon Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/Autocannon Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "up",
+            "left",
+            "up"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "rocket_sentry",
+        "name": "A/MLS-4X Rocket Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/Rocket Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "right",
+            "left"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "ems_mortar_sentry",
+        "name": "A/M-23 EMS Mortar Sentry",
+        "icon": "/static/media/icon/Robotics Workshop/EMS Mortar Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "down",
+            "right"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "patriot_exosuit",
+        "name": "EXO-45 Patriot Exosuit",
+        "icon": "/static/media/icon/Robotics Workshop/Patriot Exosuit.svg",
+        "keys": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "down",
+            "down"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "emancipator_exosuit",
+        "name": "EXO-49 Emancipator Exosuit",
+        "icon": "/static/media/icon/Robotics Workshop/Emancipator Exosuit.svg",
+        "keys": [
+            "left",
+            "down",
+            "right",
+            "up",
+            "left",
+            "down",
+            "up"
+        ],
+        "category": "Robotics Workshop"
+    },
+    {
+        "id": "sterilizer",
+        "name": "TX-41 Sterilizer",
+        "icon": "/static/media/icon/Chemical Agents/Sterilizer.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "down",
+            "left"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "ax_tx_13_guard_dog_dog_breath",
+        "name": "AX/TX-13 \"Guard Dog\" Dog Breath",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "up",
+            "right",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "directional_shield",
+        "name": "SH-51 Directional Shield",
+        "icon": "/static/media/icon/Urban Legends/Directional Shield.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "right",
+            "up",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "anti_tank_emplacement",
+        "name": "E/AT-12 Anti-Tank Emplacement",
+        "icon": "/static/media/icon/Urban Legends/Anti-Tank Emplacement.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "right",
+            "right",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "flame_sentry",
+        "name": "A/FLAM-40 Flame Sentry",
+        "icon": "/static/media/icon/Urban Legends/Flame Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "down",
+            "up",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "hellbomb",
+        "name": "B-100 Portable Hellbomb",
+        "icon": "/static/media/icon/General Stratagems/Hellbomb.svg",
+        "keys": [
+            "down",
+            "right",
+            "up",
+            "up",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "hover_pack",
+        "name": "LIFT-860 Hover Pack",
+        "icon": "/static/media/icon/Borderline Justice/Hover Pack.svg",
+        "keys": [
+            "down",
+            "up",
+            "up",
+            "down",
+            "left",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "one_true_flag",
+        "name": "CQC-1 One True Flag",
+        "icon": "/static/media/icon/Masters of Ceremony/One True Flag.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "right",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "gl_52_de_escalator",
+        "name": "GL-52 De-Escalator",
+        "icon": "/static/media/icon/Force of Law/GL-52 De-Escalator.svg",
+        "keys": [
+            "down",
+            "right",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "ax_arc_3_guard_dog_k_9",
+        "name": "AX/ARC-3 \"Guard Dog\" K-9",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "up",
+            "right",
+            "left"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "epoch",
+        "name": "PLAS-45 Epoch",
+        "icon": "/static/media/icon/Control Group/Epoch.svg",
+        "keys": [
+            "down",
+            "left",
+            "up",
+            "left",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "laser_sentry",
+        "name": "A/LAS-98 Laser Sentry",
+        "icon": "/static/media/icon/Control Group/Laser Sentry.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "down",
+            "up",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "warp_pack",
+        "name": "LIFT-182 Warp Pack",
+        "icon": "/static/media/icon/Control Group/Warp Pack.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "down",
+            "left",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "spear",
+        "name": "S-11 Speargun",
+        "icon": "/static/media/icon/Patriotic Administration Center/Spear.svg",
+        "keys": [
+            "down",
+            "right",
+            "down",
+            "left",
+            "up",
+            "right"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "expendable_napalm",
+        "name": "EAT-700 Expendable Napalm",
+        "icon": "/static/media/icon/Dust Devils/Expendable Napalm.svg",
+        "keys": [
+            "down",
+            "down",
+            "left",
+            "up",
+            "left"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "solo_silo",
+        "name": "MS-11 Solo Silo",
+        "icon": "/static/media/icon/Dust Devils/Solo Silo.svg",
+        "keys": [
+            "down",
+            "up",
+            "right",
+            "down",
+            "down"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "maxigun",
+        "name": "M-1000 Maxigun",
+        "icon": "/static/media/icon/Python Commandos/Maxigun.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "down",
+            "up",
+            "up"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "defoliation_tool",
+        "name": "CQC-9 Defoliation Tool",
+        "icon": "/static/media/icon/Python Commandos/Defoliation Tool.svg",
+        "keys": [
+            "down",
+            "left",
+            "right",
+            "right",
+            "down"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "ax_flam_75_guard_dog_hot_dog",
+        "name": "AX/FLAM-75 \"Guard Dog\" Hot Dog",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "up",
+            "left",
+            "left"
+        ],
+        "category": "Warbonds"
+    },
+    {
+        "id": "reinforce",
+        "name": "Reinforce",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "up",
+            "down",
+            "right",
+            "left",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "sos_beacon",
+        "name": "SoS Beacon",
+        "icon": "/static/media/icon/General Stratagems/SOS Beacon.svg",
+        "keys": [
+            "up",
+            "down",
+            "right",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "resupply",
+        "name": "Resupply",
+        "icon": "/static/media/icon/General Stratagems/Resupply.svg",
+        "keys": [
+            "down",
+            "down",
+            "up",
+            "right"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "eagle_rearm",
+        "name": "Eagle Rearm",
+        "icon": "/static/media/icon/Hangar/Eagle Rearm.svg",
+        "keys": [
+            "up",
+            "up",
+            "left",
+            "up",
+            "right"
+        ],
+        "category": "Hangar (Eagle)"
+    },
+    {
+        "id": "sssd_delivery",
+        "name": "SSSD Delivery",
+        "icon": "/static/media/icon/General Stratagems/Reinforce.svg",
+        "keys": [
+            "down",
+            "down",
+            "down",
+            "up",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "prospecting_drill",
+        "name": "Prospecting Drill",
+        "icon": "/static/media/icon/General Stratagems/Prospecting Drill.svg",
+        "keys": [
+            "down",
+            "down",
+            "left",
+            "right",
+            "down",
+            "down"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "super_earth_flag",
+        "name": "Super Earth Flag",
+        "icon": "/static/media/icon/General Stratagems/Super Earth Flag.svg",
+        "keys": [
+            "down",
+            "up",
+            "down",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "hellbomb",
+        "name": "Hellbomb",
+        "icon": "/static/media/icon/General Stratagems/Hellbomb.svg",
+        "keys": [
+            "down",
+            "up",
+            "left",
+            "down",
+            "up",
+            "right",
+            "down",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "upload_data",
+        "name": "Upload Data",
+        "icon": "/static/media/icon/General Stratagems/Upload Data.svg",
+        "keys": [
+            "left",
+            "right",
+            "up",
+            "up",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "seismic_probe",
+        "name": "Seismic Probe",
+        "icon": "/static/media/icon/General Stratagems/Seismic Probe.svg",
+        "keys": [
+            "up",
+            "up",
+            "left",
+            "right",
+            "down",
+            "down"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "orbital_illumination_flare",
+        "name": "Orbital Illumination Flare",
+        "icon": "/static/media/icon/General Stratagems/Orbital Illumination Flare.svg",
+        "keys": [
+            "right",
+            "right",
+            "left",
+            "left"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "seaf_artillery",
+        "name": "SEAF Artillery",
+        "icon": "/static/media/icon/General Stratagems/SEAF Artillery.svg",
+        "keys": [
+            "right",
+            "up",
+            "up",
+            "down"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "dark_fluid_vessel",
+        "name": "Dark Fluid Vessel",
+        "icon": "/static/media/icon/General Stratagems/Dark Fluid Vessel.svg",
+        "keys": [
+            "up",
+            "left",
+            "right",
+            "down",
+            "up",
+            "up"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "tectonic_drill",
+        "name": "Tectonic Drill",
+        "icon": "/static/media/icon/General Stratagems/Tectonic Drill.svg",
+        "keys": [
+            "up",
+            "down",
+            "up",
+            "down",
+            "up",
+            "down"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "hive_breaker_drill",
+        "name": "Hive Breaker Drill",
+        "icon": "/static/media/icon/General Stratagems/Hive Breaker Drill.svg",
+        "keys": [
+            "left",
+            "up",
+            "down",
+            "up",
+            "down",
+            "down"
+        ],
+        "category": "Mission"
+    },
+    {
+        "id": "orbital_bombardment",
+        "name": "Orbital Bombardment",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital 120MM HE Barrage.svg",
+        "keys": [
+            "right",
+            "down",
+            "right",
+            "down",
+            "right",
+            "down"
+        ],
+        "category": "Space Station"
+    },
+    {
+        "id": "eagle_storm",
+        "name": "Eagle Storm",
+        "icon": "/static/media/icon/Hangar/Eagle Airstrike.svg",
+        "keys": [
+            "up",
+            "right",
+            "down",
+            "right"
+        ],
+        "category": "Space Station"
+    },
+    {
+        "id": "heavy_ordnance_distribution",
+        "name": "Heavy Ordnance Distribution",
+        "icon": "/static/media/icon/Orbital Cannons/Orbital 380MM HE Barrage.svg",
+        "keys": [
+            "right",
+            "down",
+            "up",
+            "up",
+            "left",
+            "down",
+            "down"
+        ],
+        "category": "Space Station"
+    },
+    {
+        "id": "hellpod_optimization",
+        "name": "Hellpod Space Optimization",
+        "icon": "/static/media/icon/Hellpod.svg",
+        "keys": [],
+        "category": "Space Station"
+    }
+]
