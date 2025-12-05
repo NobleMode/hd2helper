@@ -106,11 +106,19 @@
             STRATAGEM COMMAND INTERFACE
           </p>
         </div>
-        <div
-          id="connectionStatus"
-          class="text-green-500 font-bold text-sm animate-pulse"
-        >
-          CONNECTED
+        <div class="flex items-center gap-4">
+          <button
+            id="openOptions"
+            class="text-hd-yellow border border-hd-yellow px-2 py-1 text-xs font-bold hover:bg-hd-yellow hover:text-black transition-colors"
+          >
+            SETTINGS
+          </button>
+          <div
+            id="connectionStatus"
+            class="text-green-500 font-bold text-sm animate-pulse"
+          >
+            CONNECTED
+          </div>
         </div>
       </header>
 
@@ -185,8 +193,8 @@
             </label>
           </div>
 
-          <div class="flex gap-4">
-            <div class="flex-1">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
               <label class="text-xs text-gray-400 block mb-1"
                 >OPEN MENU KEY</label
               >
@@ -197,12 +205,36 @@
                 class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold uppercase focus:border-hd-yellow outline-none"
               />
             </div>
-            <div class="flex-1">
-              <label class="text-xs text-gray-400 block mb-1">DELAY (MS)</label>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1"
+                >SEQ DELAY (MS)</label
+              >
               <input
                 type="number"
                 id="config-delay"
                 value="50"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1"
+                >OPEN DELAY (MS)</label
+              >
+              <input
+                type="number"
+                id="config-open-delay"
+                value="100"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1"
+                >KEY HOLD (MS)</label
+              >
+              <input
+                type="number"
+                id="config-key-duration"
+                value="20"
                 class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 text-sm font-bold focus:border-hd-yellow outline-none"
               />
             </div>
@@ -243,6 +275,214 @@
         <!-- Compact Grid -->
         <div id="stratagem-list" class="grid grid-cols-4 gap-2">
           <!-- List items -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Options Overlay -->
+    <div
+      id="options-section"
+      class="fixed inset-0 bg-hd-black/95 z-50 hidden flex flex-col"
+    >
+      <div
+        class="p-4 border-b border-hd-yellow flex justify-between items-center bg-hd-grey"
+      >
+        <h2 class="text-xl font-bold text-hd-yellow">SYSTEM CONFIGURATION</h2>
+        <button
+          id="closeOptions"
+          class="text-white hover:text-hd-yellow font-bold px-4 py-2 border border-white hover:border-hd-yellow transition-colors"
+        >
+          CLOSE
+        </button>
+      </div>
+
+      <div class="flex-grow overflow-y-auto p-6 max-w-3xl mx-auto w-full">
+        <!-- General Settings -->
+        <div class="mb-8">
+          <h3
+            class="text-hd-yellow font-bold text-lg mb-4 border-b border-gray-700 pb-2"
+          >
+            GENERAL
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Menu Mode -->
+            <div>
+              <label class="text-xs text-gray-400 block mb-2">MENU MODE</label>
+              <div class="flex flex-col gap-2">
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-2 border border-gray-700 hover:border-hd-yellow bg-hd-grey"
+                >
+                  <input
+                    type="radio"
+                    name="menuMode"
+                    value="hold"
+                    class="accent-hd-yellow"
+                  />
+                  <div>
+                    <div class="font-bold text-sm">HOLD (DEFAULT)</div>
+                    <div class="text-[10px] text-gray-400">
+                      Hold key to open, release to close
+                    </div>
+                  </div>
+                </label>
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-2 border border-gray-700 hover:border-hd-yellow bg-hd-grey"
+                >
+                  <input
+                    type="radio"
+                    name="menuMode"
+                    value="toggle"
+                    class="accent-hd-yellow"
+                  />
+                  <div>
+                    <div class="font-bold text-sm">TOGGLE</div>
+                    <div class="text-[10px] text-gray-400">
+                      Tap to open, auto-closes
+                    </div>
+                  </div>
+                </label>
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-2 border border-gray-700 hover:border-hd-yellow bg-hd-grey"
+                >
+                  <input
+                    type="radio"
+                    name="menuMode"
+                    value="pre_call"
+                    class="accent-hd-yellow"
+                  />
+                  <div>
+                    <div class="font-bold text-sm">PRE-CALL</div>
+                    <div class="text-[10px] text-gray-400">
+                      No menu key, just sequence
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Open Key -->
+            <div>
+              <label class="text-xs text-gray-400 block mb-2"
+                >OPEN MENU KEY</label
+              >
+              <input
+                type="text"
+                id="opt-open-key"
+                class="w-full bg-black/50 text-white border border-gray-600 px-3 py-2 font-bold uppercase focus:border-hd-yellow outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+              />
+              <p class="text-[10px] text-gray-500 mt-1">
+                Disabled in Pre-Call mode
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timing Settings -->
+        <div class="mb-8">
+          <h3
+            class="text-hd-yellow font-bold text-lg mb-4 border-b border-gray-700 pb-2"
+          >
+            TIMING (MILLISECONDS)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="text-xs text-gray-400 block mb-1">OPEN DELAY</label>
+              <input
+                type="number"
+                id="opt-open-delay"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1"
+                >SEQUENCE DELAY</label
+              >
+              <input
+                type="number"
+                id="opt-seq-delay"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1"
+                >KEY HOLD DURATION</label
+              >
+              <input
+                type="number"
+                id="opt-key-duration"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-1 font-bold focus:border-hd-yellow outline-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Keybindings -->
+        <div class="mb-8">
+          <h3
+            class="text-hd-yellow font-bold text-lg mb-4 border-b border-gray-700 pb-2"
+          >
+            KEYBINDINGS
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+              <label class="text-xs text-gray-400 block mb-1 text-center"
+                >UP</label
+              >
+              <input
+                type="text"
+                id="bind-up"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-2 font-bold uppercase text-center focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1 text-center"
+                >DOWN</label
+              >
+              <input
+                type="text"
+                id="bind-down"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-2 font-bold uppercase text-center focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1 text-center"
+                >LEFT</label
+              >
+              <input
+                type="text"
+                id="bind-left"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-2 font-bold uppercase text-center focus:border-hd-yellow outline-none"
+              />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 block mb-1 text-center"
+                >RIGHT</label
+              >
+              <input
+                type="text"
+                id="bind-right"
+                class="w-full bg-black/50 text-white border border-gray-600 px-2 py-2 font-bold uppercase text-center focus:border-hd-yellow outline-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Misc -->
+        <div>
+          <h3
+            class="text-hd-yellow font-bold text-lg mb-4 border-b border-gray-700 pb-2"
+          >
+            MISC
+          </h3>
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              id="opt-vibration"
+              class="accent-hd-yellow w-4 h-4"
+            />
+            <span class="text-sm font-bold">HAPTIC FEEDBACK</span>
+          </label>
         </div>
       </div>
     </div>

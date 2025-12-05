@@ -24,9 +24,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class ExecuteRequest(BaseModel):
     stratagem_id: str
-    mode: str = "full" # 'full' (hold ctrl) or 'sequence' (just keys)
+    mode: str = "hold" # 'hold', 'toggle', 'pre_call' (legacy: 'full'->'hold', 'sequence'->'pre_call')
     open_key: str = "ctrl"
     delay: int = 50 # milliseconds
+    open_delay: int = 100 # milliseconds
+    key_duration: int = 20 # milliseconds
+    key_map: dict = None # Optional custom key map
 
 # Serve the frontend
 @app.get("/")
@@ -93,11 +96,23 @@ async def execute_stratagem_endpoint(req: ExecuteRequest):
     
     # Convert ms to seconds
     delay_sec = req.delay / 1000.0
+    open_delay_sec = req.open_delay / 1000.0
+    key_duration_sec = req.key_duration / 1000.0
     
-    if req.mode == "full":
-        execute_stratagem(stratagem.keys, open_key=req.open_key, delay=delay_sec)
-    else:
-        execute_sequence_only(stratagem.keys, delay=delay_sec)
+    # Backward compatibility for mode
+    mode = req.mode
+    if mode == "full": mode = "hold"
+    if mode == "sequence": mode = "pre_call"
+    
+    execute_stratagem(
+        stratagem.keys, 
+        open_key=req.open_key, 
+        mode=mode,
+        delay=delay_sec,
+        open_delay=open_delay_sec,
+        key_duration=key_duration_sec,
+        key_map=req.key_map
+    )
         
     return {"status": "executed", "stratagem": stratagem.name}
 

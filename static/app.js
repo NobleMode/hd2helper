@@ -4,12 +4,19 @@ const state = {
     stationLoadout: [], // Space Station strats
     stratagems: [],
     config: {
-        holdCtrl: true,
+        menuMode: 'hold', // 'hold', 'toggle', 'pre_call'
+        openKey: 'ctrl',
+        keyMap: { up: 'up', down: 'down', left: 'left', right: 'right' },
+        delays: {
+            open: 100,
+            sequence: 50,
+            hold: 20
+        },
         vibration: true,
         compactMode: false
     },
     editingSlot: null,
-    editingType: 'main' // 'main', 'mission', or 'station'
+    editingType: 'main'
 };
 
 // DOM Elements
@@ -17,11 +24,12 @@ const loadoutGrid = document.getElementById('loadout-grid');
 const missionGrid = document.getElementById('mission-grid');
 const stationGrid = document.getElementById('station-grid');
 const librarySection = document.getElementById('library-section');
+const optionsSection = document.getElementById('options-section');
 const stratagemList = document.getElementById('stratagem-list');
 const closeLibraryBtn = document.getElementById('closeLibrary');
-const modeToggle = document.getElementById('mode-toggle');
+const closeOptionsBtn = document.getElementById('closeOptions');
+const openOptionsBtn = document.getElementById('openOptions');
 const searchBox = document.getElementById('search-box');
-const configSection = document.getElementById('configSection');
 
 // Init
 async function init() {
@@ -37,30 +45,41 @@ async function init() {
 
     const savedConfig = localStorage.getItem('hd2_config');
     if (savedConfig) {
-        state.config = { ...state.config, ...JSON.parse(savedConfig) };
+        // Merge saved config with default structure to handle new fields
+        const loaded = JSON.parse(savedConfig);
+        // Migration logic for old config structure
+        if (loaded.delay && !loaded.delays) {
+             state.config.delays.sequence = loaded.delay;
+             state.config.delays.open = loaded.openDelay || 100;
+             state.config.delays.hold = loaded.keyDuration || 20;
+             state.config.openKey = loaded.openKey || 'ctrl';
+             state.config.menuMode = loaded.mode === 'sequence' ? 'pre_call' : 'hold';
+        } else {
+             state.config = { ...state.config, ...loaded };
+        }
     }
     
     // Apply config to UI
-    if (modeToggle) modeToggle.checked = state.config.mode === 'full';
-    
-    const openKeyInput = document.getElementById('config-open-key');
-    if (openKeyInput) openKeyInput.value = state.config.openKey;
-    
-    const delayInput = document.getElementById('config-delay');
-    if (delayInput) delayInput.value = state.config.delay;
+    updateOptionsUI();
     
     // Event Listeners
-    if (modeToggle) {
-        modeToggle.addEventListener('change', saveConfig);
-    }
+    // Options Inputs
+    document.querySelectorAll('input[name="menuMode"]').forEach(r => {
+        r.addEventListener('change', saveConfig);
+    });
     
-    if (openKeyInput) {
-        openKeyInput.addEventListener('change', saveConfig);
-    }
-    
-    if (delayInput) {
-        delayInput.addEventListener('change', saveConfig);
-    }
+    ['opt-open-key', 'opt-open-delay', 'opt-seq-delay', 'opt-key-duration', 'opt-vibration'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', saveConfig);
+    });
+
+    ['bind-up', 'bind-down', 'bind-left', 'bind-right'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', saveConfig);
+    });
+
+    if (openOptionsBtn) openOptionsBtn.onclick = () => optionsSection.classList.remove('hidden');
+    if (closeOptionsBtn) closeOptionsBtn.onclick = () => optionsSection.classList.add('hidden');
     
     renderLoadout();
     renderMissionLoadout();
@@ -69,6 +88,57 @@ async function init() {
     
     // Poll DSS status every minute
     setInterval(() => fetchDSSStatus(), 60000);
+}
+
+function updateOptionsUI() {
+    // Menu Mode
+    const modeRadio = document.querySelector(`input[name="menuMode"][value="${state.config.menuMode}"]`);
+    if (modeRadio) modeRadio.checked = true;
+
+    // Open Key
+    const openKeyInput = document.getElementById('opt-open-key');
+    if (openKeyInput) {
+        openKeyInput.value = state.config.openKey;
+        openKeyInput.disabled = state.config.menuMode === 'pre_call';
+    }
+
+    // Delays
+    if (document.getElementById('opt-open-delay')) document.getElementById('opt-open-delay').value = state.config.delays.open;
+    if (document.getElementById('opt-seq-delay')) document.getElementById('opt-seq-delay').value = state.config.delays.sequence;
+    if (document.getElementById('opt-key-duration')) document.getElementById('opt-key-duration').value = state.config.delays.hold;
+
+    // Keybindings
+    if (document.getElementById('bind-up')) document.getElementById('bind-up').value = state.config.keyMap.up;
+    if (document.getElementById('bind-down')) document.getElementById('bind-down').value = state.config.keyMap.down;
+    if (document.getElementById('bind-left')) document.getElementById('bind-left').value = state.config.keyMap.left;
+    if (document.getElementById('bind-right')) document.getElementById('bind-right').value = state.config.keyMap.right;
+
+    // Vibration
+    if (document.getElementById('opt-vibration')) document.getElementById('opt-vibration').checked = state.config.vibration;
+}
+
+function saveConfig() {
+    // Read values from UI
+    const mode = document.querySelector('input[name="menuMode"]:checked')?.value || 'hold';
+    state.config.menuMode = mode;
+    
+    state.config.openKey = document.getElementById('opt-open-key').value;
+    
+    state.config.delays.open = parseInt(document.getElementById('opt-open-delay').value) || 100;
+    state.config.delays.sequence = parseInt(document.getElementById('opt-seq-delay').value) || 50;
+    state.config.delays.hold = parseInt(document.getElementById('opt-key-duration').value) || 20;
+
+    state.config.keyMap.up = document.getElementById('bind-up').value || 'up';
+    state.config.keyMap.down = document.getElementById('bind-down').value || 'down';
+    state.config.keyMap.left = document.getElementById('bind-left').value || 'left';
+    state.config.keyMap.right = document.getElementById('bind-right').value || 'right';
+
+    state.config.vibration = document.getElementById('opt-vibration').checked;
+
+    // Update UI state (e.g. disable open key)
+    updateOptionsUI();
+
+    localStorage.setItem('hd2_config', JSON.stringify(state.config));
 }
 
 async function fetchStratagems() {
@@ -94,14 +164,6 @@ async function fetchDSSStatus() {
 
 function getStratagem(id) {
     return state.stratagems.find(s => s.id === id);
-}
-
-function saveConfig() {
-    state.config.holdCtrl = modeToggle.checked; // Keep for legacy/toggle sync
-    state.config.mode = modeToggle.checked ? 'full' : 'sequence';
-    state.config.openKey = document.getElementById('config-open-key').value;
-    state.config.delay = parseInt(document.getElementById('config-delay').value) || 50;
-    localStorage.setItem('hd2_config', JSON.stringify(state.config));
 }
 
 // Rendering
@@ -465,7 +527,6 @@ function selectStratagem(id) {
 }
 
 async function executeStratagem(id) {
-    const mode = state.config.mode; // Use mode from config
     const stratagem = getStratagem(id);
     
     if (state.config.vibration && navigator.vibrate) {
@@ -480,9 +541,12 @@ async function executeStratagem(id) {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ 
                 stratagem_id: id, 
-                mode: mode,
+                mode: state.config.menuMode,
                 open_key: state.config.openKey,
-                delay: state.config.delay
+                delay: state.config.delays.sequence,
+                open_delay: state.config.delays.open,
+                key_duration: state.config.delays.hold,
+                key_map: state.config.keyMap
             })
         });
     } catch (e) {
@@ -521,7 +585,6 @@ function arrowify(keys) {
 // Event Listeners
 if (closeLibraryBtn) closeLibraryBtn.onclick = closeLibrary;
 if (searchBox) searchBox.oninput = (e) => renderLibrary(e.target.value);
-if (modeToggle) modeToggle.onchange = null; // Handled in init
 
 // Start
 init();
