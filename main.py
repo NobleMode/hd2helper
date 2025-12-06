@@ -40,6 +40,10 @@ async def read_root():
 async def favicon():
     return FileResponse('static/media/icon/favicon.ico')
 
+@app.get("/api/ping")
+async def ping():
+    return {"status": "ok"}
+
 
 @app.get("/api/stratagems")
 async def get_stratagems():

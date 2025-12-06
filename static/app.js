@@ -88,6 +88,34 @@ async function init() {
     
     // Poll DSS status every minute
     setInterval(() => fetchDSSStatus(), 60000);
+    
+    startPingLoop();
+}
+
+function startPingLoop() {
+    const el = document.getElementById('latency-counter');
+    if (!el) return;
+    el.classList.remove('hidden');
+
+    const updatePing = async () => {
+        const start = Date.now();
+        try {
+            await fetch('/api/ping');
+            const diff = Date.now() - start;
+            el.innerText = `PING: ${diff}ms`;
+            
+            if (diff < 50) el.className = "text-xs font-mono text-green-500 font-bold";
+            else if (diff < 150) el.className = "text-xs font-mono text-hd-yellow font-bold";
+            else el.className = "text-xs font-mono text-red-500 font-bold";
+            
+        } catch (e) {
+            el.innerText = "OFFLINE";
+            el.className = "text-xs font-mono text-red-700 font-bold";
+        }
+    };
+
+    updatePing();
+    setInterval(updatePing, 2000); // Check every 2s
 }
 
 function updateOptionsUI() {
@@ -535,6 +563,7 @@ async function executeStratagem(id) {
     
     showToast(`CALLING: ${stratagem.name.toUpperCase()}`);
 
+    const start = Date.now();
     try {
         await fetch('/api/execute', {
             method: 'POST',
@@ -549,6 +578,14 @@ async function executeStratagem(id) {
                 key_map: state.config.keyMap
             })
         });
+        
+        const duration = Date.now() - start;
+        const el = document.getElementById('latency-counter');
+        if(el) {
+             el.innerText = `CMD: ${duration}ms`;
+             el.className = "text-xs font-mono text-cyan-400 font-bold animate-pulse";
+        }
+
     } catch (e) {
         console.error("Execution failed", e);
         showToast("CONNECTION ERROR", true);
