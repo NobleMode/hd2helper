@@ -33,6 +33,8 @@ const searchBox = document.getElementById('search-box');
 
 // Init
 async function init() {
+    startPingLoop(); // Start immediately
+
     await fetchStratagems();
     await fetchDSSStatus();
     
@@ -86,10 +88,8 @@ async function init() {
     renderStationLoadout();
     renderLibrary();
     
-    // Poll DSS status every minute
-    setInterval(() => fetchDSSStatus(), 60000);
-    
-    startPingLoop();
+    // Poll DSS status every 2 hours
+    setInterval(() => fetchDSSStatus(), 7200000);
 }
 
 function startPingLoop() {
